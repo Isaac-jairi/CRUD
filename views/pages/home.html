@@ -1,0 +1,125 @@
+{% extends "index.html" %}
+{% block home %}
+{#NavBar#}
+<nav class="navbar  navbar-light bg-light">
+  <a class="navbar-brand" href="">Crud Isaac</a>
+<div class="navbar-right">
+    <a  data-toggle="modal" data-target="#modalNovoProduto"><button class="btn btn-dark">Novo Produto</button></a>
+    <a  data-toggle="modal" data-target="#modalNovoCliente"><button class="btn btn-dark">Novo Cliente</button></a>
+  </div>
+    
+</nav>
+
+{#Tabelas#}
+<h3>Tabela de Produtos</h3>
+
+<table class="table borderless" id="Tabela Produtos">
+  <thead>
+    <tr>
+      <th  scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Opcões</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for produto  in produtos %}
+    <tr>
+        <th style="max-width: 30px;" scope="row">{{loop.index}}</th>
+        <td>{{produto.nome}}</td>
+        <td >{{produto.descricao}}</td>
+        <td>R$ {{produto.preco}}</td>
+        <td>
+            <a href="/up-produto/{{produto.id}}/"><button class="btn btn-primary">Atualizar</button></a>
+            <a href="/del-produto/{{produto.id}}/"><button class="btn btn-danger">Apagar</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h3>Tabela de Clientes</h3>
+
+<table class="table" id="Tabela Clientes">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Opcões</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for cliente  in clientes %}
+        <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td >{{cliente.nome}}</td>
+        <td>{{cliente.telefone}}</td>
+        <td>{{cliente.email}}</td>
+        <td>
+            <a href="/up-cliente/{{cliente.id}}/"><button class="btn btn-primary">Atualizar</button></a>
+            <a href="/del-cliente/{{cliente.id}}/"><button class="btn btn-danger">Apagar</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{#Modais de cadastro#}
+<div class="modal fade" id="modalNovoCliente" tabindex="-1" aria-labelledby="modalNovoCliente" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+             <div class="modal-header">
+                <h5 class="modal-title">Novo Cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-group" action="/add-cliente" method="POST">
+                    <label>Nome</label>
+                    <input  type="text" class="form-control" name="nomeCliente"><br><br>
+                    <label>Telefone</label>
+                    <input type="number" class="form-control" name="telefoneCliente"><br><br>
+
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="emailCliente"><br><br>
+
+                    <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalNovoProduto" tabindex="-1" aria-labelledby="modalNovoProduto" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+             <div class="modal-header">
+                <h5 class="modal-title">Novo Produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-group" action="/add-produto" method="POST">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" name="nomeProduto"><br><br>
+
+                    <label>Descrição </label>
+                    <input type="text" class="form-control" name="descricaoProduto"><br><br>
+
+                    <label>Preço</label>
+                    <input type="number" class="form-control" step="any" name="precoProduto"><br><br>
+
+                    <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

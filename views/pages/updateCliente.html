@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block updateCliente %}
+    <form class="form" action="/up-cliente/{{cliente[0].id}}" method="POST">
+        <label>Nome</label>
+        <input type="text" class="form-control" name="nomeCliente" value="{{cliente[0].nome}}"><br><br>
+
+        <label>Telefone</label>
+        <input type="number" class="form-control" name="telefoneCliente" value="{{cliente[0].telefone}}"><br><br>
+
+        <label>email</label>
+        <input type="text" class="form-control" name="emailCliente" value="{{cliente[0].email}}"><br><br>
+
+        <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
+    </form>
+{% endblock %}

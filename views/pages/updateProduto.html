@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block updateProduto %}
+    <form class="form" action="/up-produto/{{produto[0].id}}" method="POST">
+        <label>Nome</label>
+        <input type="text" class="form-control" name="nomeProduto" value="{{produto[0].nome}}"><br><br>
+
+        <label>Descrição</label>
+        <input type="text" class="form-control" name="descricaoProduto" value="{{produto[0].descricao}}"><br><br>
+
+        <label>Preço</label>
+        <input type="number" class="form-control" step="any" name="precoProduto" value="{{produto[0].preco}}"><br><br>
+
+        <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
+    </form>
+{% endblock %}

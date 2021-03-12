@@ -3,7 +3,7 @@ Teste técnico
 
 No desenvolvimento desse sistema foram usados: NodeJS, Mysql, Express, Bootstrap e Nunjucks. E as seguinte linguagens: JavaScript, HTML e CSS.
 
-Para rodar o sistema, são neescessarios ter instalados o nodeJS(https://nodejs.org/en/) e mysql(https://dev.mysql.com/downloads/).
+Para rodar o sistema, são neescessarios ter instalados o nodeJS(https://nodejs.org/en/) e mysql(https://dev.mysql.com/downloads/) (Para facilitar a ultilização recomenda-se o MySql Workbanch). 
 
 Após clonar o repositorio, crie o banco de dados Mysql com o script BD.sql. 
 

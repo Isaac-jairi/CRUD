@@ -1,7 +1,7 @@
 # CRUD
 Teste técnico
 
-No desenvolvimento desse sistema foram usados: NodeJS, Mysql, Express e Nunjucks. E as seguinte linguagens: JavaScript, HTML e CSS.
+No desenvolvimento desse sistema foram usados: NodeJS, Mysql, Express, Bootstrap e Nunjucks. E as seguinte linguagens: JavaScript, HTML e CSS.
 
 Para rodar o sistema, são neescessarios ter instalados o nodeJS(https://nodejs.org/en/) e mysql(https://dev.mysql.com/downloads/).
 
@@ -10,6 +10,7 @@ Após clonar o repositorio, crie o banco de dados Mysql com o script BD.sql.
 Navegue pelo CMD até o diretório e execute o comando "npm install", que instalará todas as dependências.
 
 Substitua os seguintes valores pelos valores do seu Mysql. editando o arquivo app.js
+
 const connection = mysql.createConnection({
     host: "seuHost",
     user: "seuUsuario",
